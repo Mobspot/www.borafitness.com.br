@@ -6,6 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="theme-color" content="#333333">
+	<meta name="google-site-verification" content="q0RLRhll6ZqLO7mfHWjXyJQBtZzHLkLV42FT5Yy6DKI" />
 
 	<title><?php the_title(); ?></title>
 

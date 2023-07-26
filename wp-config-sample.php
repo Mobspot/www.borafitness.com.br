@@ -48,6 +48,7 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
+
 define( 'AUTH_KEY',         'U/gD`+rr=0;z-;DT f$z!>%bA^ok-ObEPnNx#z|Vd_R=0kfZDw<(DI=kM.6CS)OS' );
 define( 'SECURE_AUTH_KEY',  'ppzvQ?C0#Gq}s/&>D{L5yN:6<x6-St-{q97/WfXuN1Ga*SXpFw75bqE|j(5ziw6C' );
 define( 'LOGGED_IN_KEY',    '<PmUY*Lyx HY-s)%r0K1K=8>%$:Y,*+`D?EyWXH:uq6_ao$K(%]gV=O^I&3:4$#o' );
