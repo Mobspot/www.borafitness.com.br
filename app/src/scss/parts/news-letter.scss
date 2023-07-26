@@ -1,0 +1,56 @@
+#newsBlock{
+	width: 100%;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top:80px;
+
+	span{
+		font-size: 1.7rem;
+		font-weight: 500;
+		color: #fff;
+	}
+
+	input{
+		text-align: center;
+		width: 100%;
+		font-size: 1.2rem;
+		border:none;
+		border-radius: 5px;
+		padding: 10px 0px;
+		margin-top:10px;
+		::placeholder{
+			color: #fff;
+		}
+
+	}
+
+	a{
+		background-color: #5271FF;
+		border-radius: 5px;
+		padding: 9px 10px;
+		color: #fff;
+		font-size: 1.2rem;
+	}
+}
+
+
+
+@media screen and (min-width: 670px) {
+	#newsBlock{
+		height:70px;
+		flex-direction: row;
+		display:flex;
+		align-items: center;
+
+		span{
+			margin-right: 50px;
+		}
+
+		input{
+			width: 300px;
+			padding: 10px 20px;
+			margin:0;
+		}
+	}
+}

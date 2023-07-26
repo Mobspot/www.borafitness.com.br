@@ -1,0 +1,25 @@
+body{
+	font: normal normal normal 1rem Montserrat;
+	text-align: center;
+
+	#container{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+
+		.blockContainer{
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			width: 90%;
+			margin-top:60px;
+
+			h2{
+				font-weight: 500;
+			}
+
+		}
+	}
+}

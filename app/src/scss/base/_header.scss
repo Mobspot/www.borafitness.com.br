@@ -1,0 +1,135 @@
+$fonte-brother: BrotherBold, sans-serif;
+$fonte-bright: Bright, sans-serif;
+
+$fonte-gotham-bold: "Quicksand", sans-serif;
+$fonte-gotham-book: "Quicksand", sans-serif;
+$fonte-gotham-light: "Quicksand", sans-serif;
+
+$fonte-padrao: "Quicksand", sans-serif;
+
+$header: 60px;
+
+$headerDesk: 90px;
+$mobile: 1024px;
+$full-hd: 1600px;
+
+html {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	line-height: 100%;
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-variant-ligatures: none;
+	-webkit-font-variant-ligatures: none;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+	scroll-behavior: smooth;
+	a {
+		text-decoration: none;
+	}
+	&.hidden,
+	body.hidden {
+		overflow: hidden;
+	}
+
+	&::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+		background: #666;
+	}
+	&::-webkit-scrollbar-button {
+		width: 6px;
+		height: 6px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: #e1e1e1;
+		border: 0px solid #fbf9e3;
+		border-radius: 6px;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		background: #fbf9e3;
+	}
+	&::-webkit-scrollbar-thumb:active {
+		background: #808080;
+	}
+	&::-webkit-scrollbar-track {
+		background: #666666;
+		border: 0px none #fbf9e3;
+		border-radius: 8px;
+	}
+	&::-webkit-scrollbar-track:hover {
+		background: #666666;
+	}
+	&::-webkit-scrollbar-track:active {
+		background: #333333;
+	}
+	&::-webkit-scrollbar-corner {
+		background: rgba(0, 0, 0, 0);
+	}
+}
+@media screen and (max-width: $mobile) {
+	.hidden-xs {
+		display: none !important;
+	}
+}
+@media screen and (min-width: $mobile) {
+	.hidden-lg {
+		display: none !important;
+	}
+}
+@media (max-width: $mobile) and (min-width: $full-hd) {
+	.hidden-xl {
+		display: none !important;
+	}
+}
+@media screen and (min-width: $mobile) {
+	.container {
+		width: 1146px;
+		margin: 0 auto;
+	}
+}
+
+@font-face {
+	font-family: BrotherBold;
+	src: url("fonts/BROTHER-Bold.woff2") format("woff2");
+}
+@font-face {
+	font-family: Bright;
+	src: url("fonts/BRIGHTSIGHT02.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: GothamBold;
+	src: url("fonts/GothamBold.woff2") format("woff2");
+}
+@font-face {
+	font-family: GothamBook;
+	src: url("fonts/GothamBook.woff2") format("woff2");
+}
+@font-face {
+	font-family: GothamLight;
+	src: url("fonts/GothamLight.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: fontAwesomeB;
+	src: url("fonts/fa-brands-400.woff2");
+}
+@font-face {
+	font-family: fontAwesomeR;
+	src: url("fonts/fa-regular-400.woff2");
+}
+@font-face {
+	font-family: fontAwesomeS;
+	src: url("fonts/fa-solid-900.woff2");
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	body {
+		overflow-x: hidden;
+	}
+}

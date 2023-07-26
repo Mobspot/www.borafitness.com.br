@@ -1,0 +1,8 @@
+body {
+	padding-top: $header;
+	margin: 0;
+	background: #FFEECB;
+	@media screen and (min-width: $mobile) {
+		padding-top: 0;
+	}
+}

@@ -5,10 +5,5 @@ app/bower_components/
 wp-config.php
 .htaccess
 .idea
-app/src/assets/images
-src/temp/*
-src/temp/
-app/src
-app/*
-app/
-app
+OracleVM.bat
+oracle-ssh-key-2023-03-20.key

@@ -1,0 +1,22 @@
+@media screen and (min-width: 720px) {
+	#who p{
+		padding:20px;
+		font-size: 1.2rem;
+		line-height: 30px;
+		margin:0;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	#who{
+		margin: 20px;
+		border-radius: 10px;
+		color:#3d3d3d;
+		background-color: #dcdcdc;
+
+		p{
+			text-align: justify;
+			width: 90%;
+		}
+	}
+}

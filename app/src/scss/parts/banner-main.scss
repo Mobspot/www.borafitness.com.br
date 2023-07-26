@@ -1,0 +1,80 @@
+body{
+
+	.containerBanner{
+
+		#banner_mob{
+			width: 100%;
+		}
+
+		#banner_desk{
+			display: none;
+		}
+
+		#bg_banner{
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			img{
+				width:90%;
+			}
+
+			span{
+				color:white;
+				font-size: 1.2em;
+				text-align: center;
+				padding:25px
+			}
+
+			nav{
+				width: 100%;
+				margin-top:20px;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+
+				img{
+					width: 50px;
+				}
+			}
+		}
+
+		
+
+	}
+
+		@media screen and (min-width: 720px) {
+			.containerBanner{
+		
+				#banner_mob{
+					display: none;
+				}
+
+				#banner_desk{
+					display: block;
+					width: 100%;
+				}
+
+				#bg_banner{
+						
+					img{
+						width:80%;
+					}
+		
+					span{
+						font-size: 2em;
+						line-height: 45px;
+					}
+
+					nav{
+						display:none;
+					}
+				}
+
+			}
+		}
+
+	}

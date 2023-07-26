@@ -1,0 +1,25 @@
+.pub{
+	display:flex;
+	justify-content: center;
+	
+	#publicity{
+		background-color: lightgrey;
+		width: 90%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color:white;
+		height: 250px;
+		font-size: 2rem;
+	}
+}
+
+@media screen and (min-width: 700px) {
+	.pub{
+		
+		#publicity{
+			width: 80%;
+			font-size: 4rem;
+		}
+	}
+}
