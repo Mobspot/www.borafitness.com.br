@@ -7,19 +7,19 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /var/www/html
 COPY . .
-COPY tilevu.conf /etc/apache2/sites-available/000-default.conf
-COPY .env.example /var/www/html/.env
+COPY borafitness.conf /etc/apache2/sites-available/000-default.conf
+COPY wp-config-sample.php /var/www/html/wp-config.php
 
 # Install PHP extensions required by Laravel
 RUN docker-php-ext-install pdo pdo_mysql zip
 
-RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-RUN php composer-setup.php
-RUN mv composer.phar /usr/local/bin/composer
-RUN composer install
+# RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+# RUN php composer-setup.php
+# RUN mv composer.phar /usr/local/bin/composer
+# RUN composer install
 
-RUN chown -R www-data:www-data storage bootstrap
-RUN chmod -R 777 storage bootstrap/cache
+# RUN chown -R www-data:www-data storage bootstrap
+# RUN chmod -R 777 storage bootstrap/cache
 
 RUN a2enmod rewrite
 
