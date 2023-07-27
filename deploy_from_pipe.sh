@@ -11,5 +11,11 @@ sudo chomod -R 775 /var/www/html
 #**************************************************
 
 cd ~
+sudo mkdir static_site
+cd static_site
+wget --mirror --convert-links --adjust-extension https://stage.borafitness.com.br
+ls -la
+
+cd ~
 ./google-cloud-sdk/bin/gcloud storage rm -R gs://www.borafitness.com.br/*
-./google-cloud-sdk/bin/gcloud storage cp ~/www.borafitness.com.br/static_site/* gs://www.borafitness.com.br
+./google-cloud-sdk/bin/gcloud storage cp ~/static_site/* gs://www.borafitness.com.br
