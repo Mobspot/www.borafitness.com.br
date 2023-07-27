@@ -1,11 +1,14 @@
 #!/bin/bash
 
 stagePath="/var/www/html/stage.borafitness.com.br"
-gitPath="~/www.borafitness.com.br"
+gitPath="/home/ubuntu/www.borafitness.com.br"
 
-sudo rm -R $stagePath/*
-sudo cp -R $gitPath/* /var/www/html/stage.borafitness.com.br/
-sudo cp ~/www.borafitness.com.br/wp-config-sample.php /var/www/html/stage.borafitness.com.br/wp-config.php
+cd ~
+git clone git@github.com:Mobspot/www.borafitness.com.br.git
+
+#sudo rm -R $stagePath/*
+sudo cp -R $gitPath/* $stagePath/
+sudo cp $gitPath/wp-config-sample.php $stagePath/wp-config.php
 
 sudo chown -R www-data:www-data /var/www/html
 sudo chmod -R 775 /var/www/html
