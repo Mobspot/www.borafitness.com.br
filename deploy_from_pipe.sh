@@ -2,7 +2,7 @@
 
 cd ~
 cd www.borafitness.com.br
-git pull
+# git pull
 sudo cp -R . /var/www/html/stage.borafitness.com.br/
 sudo cp wp-config-sample.php /var/www/html/stage.borafitness.com.br/wp-config.php
 

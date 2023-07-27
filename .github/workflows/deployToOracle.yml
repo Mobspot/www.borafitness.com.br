@@ -13,7 +13,7 @@ jobs:
             - name: list folder
               run: ls -la
 
-            - name: Copy deploy file
+            - name: Git Pull
               uses: appleboy/ssh-action@master
               with:
                 host: 144.22.209.69
@@ -21,24 +21,8 @@ jobs:
                 key: ${{ secrets.SSH_PRIVATE_KEY }}
                 port: 22
                 script: |
+                  cd ~/www.borafitness.com.br
+                  git pull
                   sudo cp ~/www.borafitness.com.br/deploy_from_pipe.sh ~/deploy_from_pipe.sh
-
-            - name: Giving permission
-              uses: appleboy/ssh-action@master
-              with:
-                host: 144.22.209.69
-                username: ubuntu
-                key: ${{ secrets.SSH_PRIVATE_KEY }}
-                port: 22
-                script: |
                   sudo chmod +x ~/deploy_from_pipe.sh
-
-            - name: Executar script via SSH
-              uses: appleboy/ssh-action@master
-              with:
-                host: 144.22.209.69
-                username: ubuntu
-                key: ${{ secrets.SSH_PRIVATE_KEY }}
-                port: 22
-                script: |
                   bash ~/deploy_from_pipe.sh
