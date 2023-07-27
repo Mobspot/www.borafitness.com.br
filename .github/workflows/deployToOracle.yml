@@ -23,6 +23,6 @@ jobs:
                 script: |
                   cd ~/www.borafitness.com.br
                   git pull
-                  sudo cp ~/www.borafitness.com.br/deploy_from_pipe.sh ~/deploy_from_pipe.sh
-                  sudo chmod +x ~/deploy_from_pipe.sh
-                  bash ~/deploy_from_pipe.sh
+                  sudo cp ~/www.borafitness.com.br/deploy_from_pipe.sh ~/deploy.sh
+                  sudo chmod +x ~/deploy.sh
+                  bash ~/deploy.sh
