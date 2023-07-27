@@ -1,10 +1,10 @@
 #!/bin/bash
 
-stagePath="/var/www/html/stage.borafitness.com.br/"
-gitPath="~/www.borafitness.com.br/"
+stagePath="/var/www/html/stage.borafitness.com.br"
+gitPath="~/www.borafitness.com.br"
 
-sudo rm -R "$stagePath"*
-sudo cp -R "$gitPath"* /var/www/html/stage.borafitness.com.br/
+sudo rm -R $stagePath/*
+sudo cp -R $gitPath/* /var/www/html/stage.borafitness.com.br/
 sudo cp ~/www.borafitness.com.br/wp-config-sample.php /var/www/html/stage.borafitness.com.br/wp-config.php
 
 sudo chown -R www-data:www-data /var/www/html
