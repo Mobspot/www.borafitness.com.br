@@ -1,3 +1,24 @@
+# Dockerfile
+
+FROM python:3.8
+
+RUN apt-get update && apt-get install -y curl gnupg
+
+# Adicione o repositório do Google Cloud SDK e instale-o
+RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+RUN apt-get update && apt-get install -y google-cloud-sdk
+
+# Instala os componentes beta do SDK
+CMD ["gcloud components install beta"]
+
+# autentica no gcloud
+# RUN gcloud auth activate-service-account --key-file=./tilevu.json
+
+
+# Restante das etapas para configurar o ambiente e executar sua pipeline
+
+
 # FROM php:8.1-apache
 
 # RUN apt-get update && apt-get install -y \
