@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo rm -R /var/www/html/stage.borafitness.com.br/
 sudo cp -R ~/www.borafitness.com.br/* /var/www/html/stage.borafitness.com.br/
 sudo cp wp-config-sample.php /var/www/html/stage.borafitness.com.br/wp-config.php
 

@@ -110,7 +110,7 @@ class Util {
 	 */
 	public static function debug_log( $object = null ) {
 		$options = Options::instance();
-		if ( ! $options->get( 'debugging_mode' ) ) {
+		if ( $options->get( 'debugging_mode' ) !== '1' ) {
 			return;
 		}
 
@@ -167,15 +167,6 @@ class Util {
 		return $contents;
 	}
 
-    public static function is_valid_scheme( $scheme ) {
-        $valid_schemes = apply_filters( 'simply_static_valid_schemes', [
-           'http',
-           'https',
-        ]);
-
-        return in_array( $scheme, $valid_schemes );
-    }
-
 	/**
 	 * Given a URL extracted from a page, return an absolute URL
 	 *
@@ -229,9 +220,6 @@ class Util {
 
 		// if no path, check for an ending slash; if there isn't one, add one
 		if ( ! isset( $parsed_extracted_url['path'] ) ) {
-            if ( isset( $parsed_extracted_url['scheme'] ) && ! self::is_valid_scheme( $parsed_extracted_url['scheme'] ) ) {
-                return $extracted_url;
-            }
 			$clean_url     = self::remove_params_and_fragment( $extracted_url );
 			$fragment      = substr( $extracted_url, strlen( $clean_url ) );
 			$extracted_url = trailingslashit( $clean_url ) . $fragment;
@@ -451,33 +439,6 @@ class Util {
 		}
 
 		return $info;
-	}
-
-	public static function is_local_asset_url( $url ) {
-		if ( ! self::is_local_url( $url ) ) {
-			return false;
-		}
-
-		$allowed_asset_extensions = apply_filters( 'simply_static_allowed_local_asset_extensions', [
-			'webp',
-			'gif',
-			'jpg',
-			'jpeg',
-			'png',
-			'svg',
-			'json',
-			'js',
-			'css',
-			'xml',
-		]);
-
-		$path_info = self::url_path_info( $url );
-
-		if ( empty( $path_info['extension'] ) ) {
-			return false;
-		}
-
-		return in_array( $path_info['extension'], $allowed_asset_extensions, true );
 	}
 
 	/**

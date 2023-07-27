@@ -198,7 +198,7 @@ class Archive_Creation_Job extends \WP_Background_Process {
 	 * Cancel the currently running job
 	 * @return void
 	 */
-	public function cancel( $message = '' ) {
+	public function cancel() {
 		if ( ! $this->is_job_done() ) {
 			Util::debug_log( "Cancelling job; job is not done" );
 
@@ -221,10 +221,6 @@ class Archive_Creation_Job extends \WP_Background_Process {
 				$this->update( $batch->key, $batch->data );
 			}
 
-            if ( $message ) {
-                $this->save_status_message( $message );
-            }
-
 			$this->dispatch();
 		} else {
 			Util::debug_log( "Can't cancel; job is done" );
@@ -241,12 +237,6 @@ class Archive_Creation_Job extends \WP_Background_Process {
 		// we're done if the start and end time are null (never run) or if
 		// the start and end times are both set
 		return ( $start_time == null && $end_time == null ) || ( $start_time != null && $end_time != null);
-	}
-
-	public function is_running() {
-		$start_time = $this->options->get( 'archive_start_time' );
-
-		return $start_time != null && ! $this->is_job_done();
 	}
 
 	/**

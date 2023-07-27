@@ -27,12 +27,7 @@ class Create_Zip_Archive_Task extends Task {
 			return $download_url;
 		} else {
 			$message = __( 'ZIP archive created: ', 'simply-static' );
-            if ( $this->is_wp_cli_running() ) {
-                $message .= $download_url;
-            } else {
-                $message .= ' <a href="' . $download_url . '">' . __( 'Click here to download', 'simply-static' ) . '</a>';
-            }
-
+			$message .= ' <a href="' . $download_url . '">' . __( 'Click here to download', 'simply-static' ) . '</a>';
 			$this->save_status_message( $message );
 			return true;
 		}
