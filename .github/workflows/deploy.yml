@@ -1,24 +1,24 @@
 name: borafitness-oracle
 on: [push]
 jobs:
-  deploy:
-    name: deploy to Oracle Cloud
-    runs-on: ubuntu-latest
+    deploy:
+        name: deploy to Oracle Cloud
+        runs-on: ubuntu-latest
 
-    steps:
-      # Git checkout
-      - name: Checkout
-        uses: actions/checkout@v2
+        steps:
+            # Git checkout
+            - name: Checkout
+              uses: actions/checkout@v2
 
-      - name: list folder
-        run: ls -la
+            - name: list folder
+              run: ls -la
 
-      - name: Executar script via SSH
-        hosts: 144.22.209.69
-        gather_facts: false
-        become: true
-
-        tasks:
-          - name: Executar script bash
-          become: true
-          shell: bash ~/.deploy_from_pipe.sh
+            - name: Executar script via SSH
+              uses: appleboy/ssh-action@master
+              with:
+                host: 144.22.209.69
+                username: ubuntu
+                key: ${{ secrets.SSH_PRIVATE_KEY }}
+                port: 22
+                script: |
+                  bash ~/.deploy_from_pipe.sh
