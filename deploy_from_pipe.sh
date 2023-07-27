@@ -10,6 +10,8 @@ sudo cp ~/www.borafitness.com.br/wp-config-sample.php /var/www/html/stage.borafi
 sudo chown -R www-data:www-data /var/www/html
 sudo chmod -R 775 /var/www/html
 
+echo "fim do arquivo deploy.sh"
+
 # # code to send static files to google buckets here
 # #**************************************************
 # cd ~
