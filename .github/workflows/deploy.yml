@@ -10,6 +10,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # running a teste
       - name: list folder
         run: ls -la
+
+      - name: Executar script via SSH
+        hosts: 144.22.209.69
+        gather_facts: false
+        become: true
+
+        tasks:
+          - name: Executar script bash
+          become: true
+          shell: bash ~/.deploy_from_pipe.sh
