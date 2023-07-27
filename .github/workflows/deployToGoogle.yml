@@ -23,7 +23,7 @@ jobs:
           uses: 'google-github-actions/upload-cloud-storage@v1'
           with:
             path: 'teste.gcp'
-            destination: 'www.borafitness.com.br/teste.gcp'
+            destination: 'www.borafitness.com.br/'
             process_gcloudignore: false
     
         # Example of using the output
