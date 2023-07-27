@@ -1,17 +1,17 @@
-FROM php:8.1-apache
+# FROM php:8.1-apache
 
-RUN apt-get update && apt-get install -y \
-    libzip-dev \
-    zip \
-    unzip
+# RUN apt-get update && apt-get install -y \
+#     libzip-dev \
+#     zip \
+#     unzip
 
-WORKDIR /var/www/html
-COPY . .
-COPY borafitness.conf /etc/apache2/sites-available/000-default.conf
-COPY wp-config-sample.php /var/www/html/wp-config.php
+# WORKDIR /var/www/html
+# COPY . .
+# COPY borafitness.conf /etc/apache2/sites-available/000-default.conf
+# COPY wp-config-sample.php /var/www/html/wp-config.php
 
 # Install PHP extensions required by Laravel
-RUN docker-php-ext-install pdo pdo_mysql zip
+# RUN docker-php-ext-install pdo pdo_mysql zip
 
 # RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 # RUN php composer-setup.php
@@ -21,11 +21,11 @@ RUN docker-php-ext-install pdo pdo_mysql zip
 # RUN chown -R www-data:www-data storage bootstrap
 # RUN chmod -R 777 storage bootstrap/cache
 
-RUN a2enmod rewrite
+# RUN a2enmod rewrite
 
-CMD ["sh", "-c", "apache2ctl -D FOREGROUND"]
+# CMD ["sh", "-c", "apache2ctl -D FOREGROUND"]
 
-EXPOSE 80 443
+# EXPOSE 80 443
 
 # docker build -t tilevu .
 # docker run --rm -it -p 80:80 tilevu bash
