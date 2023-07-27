@@ -1,0 +1,32 @@
+name: borafitness-google
+on: [push]
+jobs:
+    deploy_to_google:
+        name: deploy to Google Cloud
+        runs-on: ubuntu-latest
+
+        permissions:
+          contents: 'read'
+          id-token: 'write'
+    
+        steps:
+        - id: 'checkout'
+          uses: 'actions/checkout@v3'
+    
+        - id: 'auth'
+          uses: 'google-github-actions/auth@v1'
+          with:
+            workload_identity_provider: '${{ secrets.DEPLOY_TO_GCP_BUCKET_KEY }}'
+            service_account: 'github-tilevu@tilevu.iam.gserviceaccount.com'
+    
+        - id: 'upload-folder'
+          uses: 'google-github-actions/upload-cloud-storage@v1'
+          with:
+            path: '.'
+            destination: 'www.borafitness.com.br'
+    
+        # Example of using the output
+        # - id: 'uploaded-files'
+        #   uses: 'foo/bar@main'
+        #   env:
+        #     files: '${{ steps.upload-folder.outputs.uploaded }}'

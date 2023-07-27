@@ -1,7 +1,7 @@
 name: borafitness-oracle
 on: [push]
 jobs:
-    deploy:
+    deploy_to_oracle:
         name: deploy to Oracle Cloud
         runs-on: ubuntu-latest
 
