@@ -10,4 +10,5 @@ sudo cp wp-config-sample.php /var/www/html/stage.borafitness.com.br/wp-config.ph
 #**************************************************
 
 cd ~
+./google-cloud-sdk/bin/gcloud storage rm -R gs://www.borafitness.com.br/*
 ./google-cloud-sdk/bin/gcloud storage cp ~/www.borafitness.com.br/static_site/* gs://www.borafitness.com.br
