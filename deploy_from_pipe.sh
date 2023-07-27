@@ -7,12 +7,17 @@ sudo cp ~/www.borafitness.com.br/wp-config-sample.php /var/www/html/stage.borafi
 sudo chown -R www-data:www-data /var/www/html
 sudo chmod -R 775 /var/www/html
 
-# code to send static files to oracle buckets here
+# code to send static files to google buckets here
 #**************************************************
 
 cd ~
-sudo mkdir static_site
-cd static_site
+if [ ! -d "static_site" ]; then
+  sudo mkdir static_site
+else
+  sudo rm -R static_site/*
+
+cd ~/static_site
+
 sudo wget --mirror --convert-links --adjust-extension https://stage.borafitness.com.br
 ls -la
 
