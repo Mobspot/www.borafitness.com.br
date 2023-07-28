@@ -26,10 +26,12 @@ else
   sudo mkdir static_site
 fi
 
-cd static_site
+cd ~/static_site
 sudo wget --mirror --convert-links --adjust-extension https://stage.borafitness.com.br
+cd ~/static_site/stage.borafitness.com.br
 ls -la
 
+cd ~
 echo "cleaning bucket..."
 ./google-cloud-sdk/bin/gcloud storage rm -R gs://www.borafitness.com.br/*
 
