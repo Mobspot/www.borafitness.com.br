@@ -10,21 +10,26 @@ sudo cp -R $gitPath/* $stagePath/
 echo "coping gitPath to stagePath..."
 
 sudo cp $gitPath/wp-config-sample.php $stagePath/wp-config.php
+echo "coping wp-config..."
 
 sudo chown -R www-data:www-data /var/www/html
 sudo chmod -R 775 /var/www/html
+echo "giving permission ok..."
+
+# code to send static files to google buckets here
+#**************************************************
+cd ~
+echo "creating static_site..."
+if [ ! -d "static_site" ]; then
+  sudo mkdir static_site
+else
+  sudo rm -R static_site/*
+fi
+
+cd static_site
+ls -la
 
 echo "fim do arquivo deploy.sh"
-
-# # code to send static files to google buckets here
-# #**************************************************
-# cd ~
-
-# if [ ! -d "static_site" ]; then
-#   sudo mkdir static_site
-# else
-#   sudo rm -R static_site/*
-# fi
 
 # cd ~/static_site
 
