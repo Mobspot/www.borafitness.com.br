@@ -30,7 +30,10 @@ cd static_site
 sudo wget --mirror --convert-links --adjust-extension https://stage.borafitness.com.br
 ls -la
 
-echo "fim do arquivo deploy.sh"
+echo "cleaning bucket..."
+./google-cloud-sdk/bin/gcloud storage rm -R gs://www.borafitness.com.br/*
 
-# ./google-cloud-sdk/bin/gcloud storage rm -R gs://www.borafitness.com.br/*
-# ./google-cloud-sdk/bin/gcloud storage cp ~/static_site/* gs://www.borafitness.com.br 
+echo "coping files to bucket..."
+./google-cloud-sdk/bin/gcloud storage cp ~/static_site/stage.borafitness.com.br/* gs://www.borafitness.com.br 
+
+echo "fim do arquivo deploy.sh"
