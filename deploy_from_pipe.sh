@@ -36,6 +36,6 @@ echo "cleaning bucket..."
 ./google-cloud-sdk/bin/gcloud storage rm -R gs://www.borafitness.com.br/*
 
 echo "coping files to bucket..."
-./google-cloud-sdk/bin/gcloud storage cp ~/static_site/stage.borafitness.com.br/* gs://www.borafitness.com.br 
+./google-cloud-sdk/bin/gcloud storage cp -R ~/static_site/stage.borafitness.com.br/* gs://www.borafitness.com.br 
 
 echo "fim do arquivo deploy.sh"
