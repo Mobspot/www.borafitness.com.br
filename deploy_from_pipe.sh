@@ -20,10 +20,10 @@ sudo chmod -R 775 /var/www/html
 #**************************************************
 cd ~
 echo "creating static_site..."
-if [ ! -d "static_site" ]; then
-  sudo mkdir static_site
-else
+if [ -d "static_site" ]; then
   sudo rm -R static_site/*
+else
+  sudo mkdir static_site
 fi
 
 cd static_site
