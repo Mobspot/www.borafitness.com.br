@@ -3,11 +3,12 @@
 stagePath="/var/www/html/stage.borafitness.com.br"
 gitPath="/home/ubuntu/www.borafitness.com.br"
 
-cd ~
-git clone git@github.com:Mobspot/www.borafitness.com.br.git
+sudo rm -R $stagePath/*
+echo "stagePath empty..."
 
-#sudo rm -R $stagePath/*
 sudo cp -R $gitPath/* $stagePath/
+echo "coping gitPath to stagePath..."
+
 sudo cp $gitPath/wp-config-sample.php $stagePath/wp-config.php
 
 sudo chown -R www-data:www-data /var/www/html
